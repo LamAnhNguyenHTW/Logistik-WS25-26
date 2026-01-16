@@ -1,0 +1,789 @@
+WEBVTT
+
+0
+00:00:00.039 --> 00:00:01.690
+Hallo und herzlich willkommen.
+
+1
+00:00:02.000 --> 00:00:05.280
+Heute knacken wir ein richtig klassisches Logistikrätsel.
+
+2
+00:00:05.639 --> 00:00:09.039
+Es geht um die eine Frage Wie transportiert man Waren so,
+
+3
+00:00:09.119 --> 00:00:12.270
+dass die Kosten am Ende so niedrig wie nur irgendwie möglich sind?
+
+4
+00:00:12.800 --> 00:00:13.289
+Also,
+
+5
+00:00:13.640 --> 00:00:15.789
+unser Fahrplan für heute sieht so aus.
+
+6
+00:00:16.120 --> 00:00:17.389
+Zuerst schauen wir uns mal an,
+
+7
+00:00:17.760 --> 00:00:19.629
+worum es bei dem Rätsel überhaupt geht.
+
+8
+00:00:20.659 --> 00:00:21.559
+Dann finden wir eine 1.
+
+9
+00:00:22.079 --> 00:00:23.149
+ziemlich gute Lösung.
+
+10
+00:00:23.809 --> 00:00:24.209
+danach.
+
+11
+00:00:24.370 --> 00:00:25.409
+Und da wird spannend.
+
+12
+00:00:25.729 --> 00:00:28.450
+Optimieren wir das Ganze mit einer cleveren Methode.
+
+13
+00:00:28.819 --> 00:00:29.450
+Schauen uns an,
+
+14
+00:00:29.530 --> 00:00:30.520
+was es gebracht hat
+
+15
+00:00:30.809 --> 00:00:33.369
+und ziehen am Ende das wichtigste Fazit.
+
+16
+00:00:33.770 --> 00:00:34.790
+Legen wir also los.
+
+17
+00:00:35.090 --> 00:00:36.909
+Worum geht es hier eigentlich genau?
+
+18
+00:00:37.200 --> 00:00:38.540
+Was ist die Herausforderung?
+
+19
+00:00:39.330 --> 00:00:42.250
+Und falls Sie sich bei so einem Problem schon mal gefühlt haben,
+
+20
+00:00:42.369 --> 00:00:44.889
+als würden sie in einem Meer aus Zahlen ertrinken.
+
+21
+00:00:45.409 --> 00:00:46.360
+Sie sind nicht allein.
+
+22
+00:00:46.759 --> 00:00:49.139
+Das kann auf den ersten Blick echt komplex wirken.
+
+23
+00:00:49.479 --> 00:00:50.479
+Aber ich verspreche Ihnen,
+
+24
+00:00:50.880 --> 00:00:53.599
+die Logik dahinter ist eigentlich ziemlich geradelinig.
+
+25
+00:00:53.919 --> 00:00:55.270
+Wenn man sie einmal durchschaut hat,
+
+26
+00:00:55.880 --> 00:00:57.430
+machen wir es mal ganz konkret.
+
+27
+00:00:57.759 --> 00:00:58.560
+Stellen Sie sich vor,
+
+28
+00:00:58.840 --> 00:01:01.110
+ein Unternehmen muss Weizen transportieren,
+
+29
+00:01:01.360 --> 00:01:03.849
+und zwar von drei verschiedenen Getreidesilos,
+
+30
+00:01:04.160 --> 00:01:05.589
+sagen wir in Kansas City,
+
+31
+00:01:05.839 --> 00:01:09.080
+Omaha und Des Moines zu drei Mühlen in Chicago,
+
+32
+00:01:09.239 --> 00:01:09.360
+St.
+
+33
+00:01:09.510 --> 00:01:10.699
+Louis und Cincinnati.
+
+34
+00:01:11.269 --> 00:01:12.550
+so und das hier.
+
+35
+00:01:12.830 --> 00:01:14.739
+Das ist sozusagen unser Spielfeld.
+
+36
+00:01:14.989 --> 00:01:16.830
+Diese Tabelle gibt uns alles an die Hand,
+
+37
+00:01:16.910 --> 00:01:17.510
+was wir brauchen.
+
+38
+00:01:17.989 --> 00:01:18.660
+Wir sehen genau,
+
+39
+00:01:18.750 --> 00:01:20.589
+wie viel Weizen jedes Silo liefern kann.
+
+40
+00:01:20.830 --> 00:01:21.739
+Das ist das Angebot.
+
+41
+00:01:22.150 --> 00:01:22.550
+Wir sehen,
+
+42
+00:01:22.629 --> 00:01:23.870
+wie viel jede Mühle braucht.
+
+43
+00:01:24.110 --> 00:01:25.029
+Das ist die Nachfrage.
+
+44
+00:01:25.349 --> 00:01:26.330
+Und ganz wichtig.
+
+45
+00:01:26.550 --> 00:01:26.870
+Wir sehen,
+
+46
+00:01:26.949 --> 00:01:29.269
+was der Transport auf jeder einzelnen Route kostet.
+
+47
+00:01:29.849 --> 00:01:32.029
+Jetzt könnten wir natürlich ewig herumprobieren.
+
+48
+00:01:32.370 --> 00:01:35.720
+Aber der Trick ist erst einmal eine kluge erste Schätzung abzugeben
+
+49
+00:01:35.930 --> 00:01:37.250
+an den soliden Ausgangspunkt,
+
+50
+00:01:37.370 --> 00:01:39.089
+von dem aus wir uns dann vorarbeiten.
+
+51
+00:01:39.650 --> 00:01:42.839
+Dafür nehmen wir die sogenannte Matrix Minimum Methode.
+
+52
+00:01:43.089 --> 00:01:44.290
+Klingt vielleicht kompliziert,
+
+53
+00:01:44.410 --> 00:01:45.650
+ist aber super einfach.
+
+54
+00:01:45.930 --> 00:01:46.669
+Die Idee ist,
+
+55
+00:01:46.970 --> 00:01:50.019
+wir fangen einfach bei der absolut billigsten Transportroute an,
+
+56
+00:01:50.089 --> 00:01:50.569
+die es gibt.
+
+57
+00:01:50.930 --> 00:01:52.650
+Das ist ein total intuitiver Weg,
+
+58
+00:01:52.690 --> 00:01:54.989
+um schnell eine gute erste Lösung zu finden.
+
+59
+00:01:55.629 --> 00:01:56.059
+Okay,
+
+60
+00:01:56.220 --> 00:01:57.529
+schauen wir mal in die Tabelle.
+
+61
+00:01:57.940 --> 00:01:59.569
+Wo sind die Kosten am niedrigsten?
+
+62
+00:02:00.019 --> 00:02:00.220
+Ah,
+
+63
+00:02:00.339 --> 00:02:00.730
+hier
+
+64
+00:02:01.059 --> 00:02:04.059
+von Des Moines nach Chicago für nur vier Dollar pro Tonne.
+
+65
+00:02:04.639 --> 00:02:06.330
+Chicago braucht 200 Tonnen.
+
+66
+00:02:06.540 --> 00:02:06.989
+Perfekt.
+
+67
+00:02:07.339 --> 00:02:10.130
+Schicken wir die doch direkt rüber und decken den Bedarf komplett
+
+68
+00:02:10.699 --> 00:02:12.740
+so und jetzt das Ganze von vorn.
+
+69
+00:02:13.149 --> 00:02:14.779
+Was ist die nächstgünstigste Route,
+
+70
+00:02:14.820 --> 00:02:15.759
+die noch verfügbar ist?
+
+71
+00:02:16.139 --> 00:02:16.580
+Genau
+
+72
+00:02:16.899 --> 00:02:18.100
+von Des Moines nach St.
+
+73
+00:02:18.240 --> 00:02:19.250
+Louis für fünf Dollar.
+
+74
+00:02:19.860 --> 00:02:23.179
+Das Silo in Des Moines hat noch 75 Tonnen auf Lager.
+
+75
+00:02:23.419 --> 00:02:24.820
+Also schicken wir die dorthin.
+
+76
+00:02:25.139 --> 00:02:26.740
+Und damit ist das Silo auch schon leer.
+
+77
+00:02:26.899 --> 00:02:27.289
+Super.
+
+78
+00:02:28.139 --> 00:02:31.339
+Und dieses Spielchen treiben wir jetzt einfach so lange weiter,
+
+79
+00:02:31.619 --> 00:02:34.580
+bis alle Mühlen versorgt und alle Silos leer sind.
+
+80
+00:02:35.179 --> 00:02:35.860
+Was wir dann haben,
+
+81
+00:02:36.179 --> 00:02:38.339
+ist unser erster kompletter Versandplan.
+
+82
+00:02:38.660 --> 00:02:39.309
+Alles passt.
+
+83
+00:02:39.580 --> 00:02:41.539
+Angebot und Nachfrage sind ausgeglichen.
+
+84
+00:02:41.860 --> 00:02:44.399
+Alles auf Basis der jeweils günstigsten Routen.
+
+85
+00:02:44.869 --> 00:02:46.660
+Was kostet uns der ganze Spass?
+
+86
+00:02:47.190 --> 00:02:48.259
+Rechnen wir das mal zusammen.
+
+87
+00:02:48.589 --> 00:02:51.179
+Wir landen bei 4550 Dollar.
+
+88
+00:02:51.809 --> 00:02:52.750
+Gar nicht schlecht für den Anfang,
+
+89
+00:02:52.789 --> 00:02:52.990
+oder?
+
+90
+00:02:53.550 --> 00:02:53.860
+Aber.
+
+91
+00:02:54.110 --> 00:02:56.179
+Und das ist jetzt die alles entscheidende Frage.
+
+92
+00:02:56.389 --> 00:02:57.589
+Geht es vielleicht noch billiger?
+
+93
+00:02:58.110 --> 00:02:59.059
+Die Antwort ist
+
+94
+00:02:59.440 --> 00:03:00.130
+wahrscheinlich schon.
+
+95
+00:03:00.669 --> 00:03:05.119
+Und genau dafür kommt jetzt die sogenannte Stepping Stone Methode ins Spiel.
+
+96
+00:03:05.750 --> 00:03:07.729
+Mit der können wir unsere erste Lösung
+
+97
+00:03:07.869 --> 00:03:09.869
+Schritt für Schritt nehmen und sie verbessern,
+
+98
+00:03:10.110 --> 00:03:11.539
+bis sie absolut perfekt ist.
+
+99
+00:03:12.149 --> 00:03:14.110
+Der Name ist übrigens ziemlich bildlich,
+
+100
+00:03:14.270 --> 00:03:15.190
+denn man stellt sich vor,
+
+101
+00:03:15.309 --> 00:03:16.869
+man hüpft wie auf Trittsteinen,
+
+102
+00:03:17.070 --> 00:03:18.460
+also Stepping Stones
+
+103
+00:03:18.630 --> 00:03:19.309
+über die Felder,
+
+104
+00:03:19.389 --> 00:03:20.309
+die schon belegt sind,
+
+105
+00:03:20.429 --> 00:03:22.679
+um eine leere Route zu testen und zu sehen,
+
+106
+00:03:22.789 --> 00:03:23.869
+ob sie sich lohnen würde.
+
+107
+00:03:24.429 --> 00:03:26.270
+Lassen Sie uns das doch mal durchspielen.
+
+108
+00:03:26.539 --> 00:03:28.160
+Nehmen wir uns eine von den Routen vor,
+
+109
+00:03:28.270 --> 00:03:29.509
+die wir bisher nicht nutzen.
+
+110
+00:03:29.910 --> 00:03:30.630
+Was wäre denn,
+
+111
+00:03:30.710 --> 00:03:33.619
+wenn wir einfach mal testweise eine einzige Tonne
+
+112
+00:03:33.619 --> 00:03:35.990
+von Kansas Cedine nach Chicago schicken würden?
+
+113
+00:03:36.429 --> 00:03:37.389
+Um das zu prüfen,
+
+114
+00:03:37.509 --> 00:03:40.270
+brauchen wir einen sogenannten geschlossenen Pfad.
+
+115
+00:03:40.679 --> 00:03:42.380
+Sie sehen ihn hier eingezeichnet.
+
+116
+00:03:43.029 --> 00:03:45.429
+Wenn wir bei Route eins A eine Tonne dazupacken,
+
+117
+00:03:45.750 --> 00:03:47.830
+müssen wir sie ja woanders wieder abziehen,
+
+118
+00:03:47.990 --> 00:03:50.520
+damit die Gesamtbilanz von Kansas City stimmt.
+
+119
+00:03:51.110 --> 00:03:53.080
+Das löst eine kleine Kettenreaktion aus.
+
+120
+00:03:53.350 --> 00:03:53.990
+Hier war weg.
+
+121
+00:03:54.229 --> 00:03:55.059
+Da war dazu,
+
+122
+00:03:55.229 --> 00:03:57.570
+bis am Ende wieder alles perfekt ausgeglichen ist.
+
+123
+00:03:58.160 --> 00:03:59.160
+Und jetzt kommt der Clou.
+
+124
+00:03:59.440 --> 00:04:00.850
+Wir rechnen einfach mal zusammen,
+
+125
+00:04:01.119 --> 00:04:02.600
+was diese Verschiebungen kosten.
+
+126
+00:04:03.039 --> 00:04:04.600
+Also plus sechs Dollar
+
+127
+00:04:04.759 --> 00:04:06.470
+minus acht plus fünf
+
+128
+00:04:06.679 --> 00:04:07.279
+minus vier.
+
+129
+00:04:07.759 --> 00:04:08.809
+Und was kommt am Ende raus?
+
+130
+00:04:09.320 --> 00:04:11.279
+Minus ein Dollar Bingo.
+
+131
+00:04:11.639 --> 00:04:12.039
+Das heisst,
+
+132
+00:04:12.119 --> 00:04:13.330
+für jede einzelne Tonne,
+
+133
+00:04:13.440 --> 00:04:14.740
+die wir auf diesem Pfad verschieben,
+
+134
+00:04:15.039 --> 00:04:16.480
+sparen wir bares Geld.
+
+135
+00:04:16.980 --> 00:04:20.220
+Ein negatives Vorzeichen ist quasi grünes Licht für uns.
+
+136
+00:04:20.358 --> 00:04:21.000
+Wir wissen jetzt,
+
+137
+00:04:21.339 --> 00:04:22.140
+da geht noch was.
+
+138
+00:04:22.769 --> 00:04:23.040
+Also,
+
+139
+00:04:23.079 --> 00:04:24.720
+wie nutzen wir diese Erkenntnis jetzt,
+
+140
+00:04:24.839 --> 00:04:26.630
+um den Plan tatsächlich zu verbessern?
+
+141
+00:04:27.029 --> 00:04:31.029
+Die grosse Frage ist Wie viele Tonnen können wir denn jetzt maximal verschieben?
+
+142
+00:04:31.380 --> 00:04:32.040
+Ganz einfach.
+
+143
+00:04:32.510 --> 00:04:33.619
+Wir schauen uns die Felder an,
+
+144
+00:04:33.750 --> 00:04:35.070
+wo wir was abziehen müssen.
+
+145
+00:04:35.350 --> 00:04:36.130
+Die Minusfelder.
+
+146
+00:04:36.690 --> 00:04:39.070
+Die kleinste Menge dort gibt uns das Limit vor.
+
+147
+00:04:39.390 --> 00:04:43.149
+In unserem Fall sind das die 25 Tonnen in Zella eins B.
+
+148
+00:04:43.309 --> 00:04:43.950
+Mehr geht nicht,
+
+149
+00:04:44.029 --> 00:04:46.070
+sonst hätten wir plötzlich eine negative Menge.
+
+150
+00:04:46.700 --> 00:04:47.470
+Und das geht natürlich nicht.
+
+151
+00:04:47.869 --> 00:04:48.510
+Und Wolla,
+
+152
+00:04:48.869 --> 00:04:50.059
+Hier sehen wir das Ergebnis.
+
+153
+00:04:50.369 --> 00:04:54.339
+Wir verschieben genau diese 25 Tonnen entlang unseres Pfades.
+
+154
+00:04:54.899 --> 00:04:56.619
+Das gibt uns einen brandneuen,
+
+155
+00:04:56.859 --> 00:04:58.010
+besseren Versandplan.
+
+156
+00:04:58.459 --> 00:04:59.179
+Und schauen Sie mal,
+
+157
+00:04:59.619 --> 00:05:01.179
+die Route von Kansas City nach St.
+
+158
+00:05:01.299 --> 00:05:01.619
+Louis,
+
+159
+00:05:01.700 --> 00:05:02.690
+die vorher genutzt wurde,
+
+160
+00:05:03.019 --> 00:05:04.549
+ist jetzt komplett leer.
+
+161
+00:05:05.130 --> 00:05:08.089
+und genau diesen Prozess eine leere Route schnappen,
+
+162
+00:05:08.290 --> 00:05:09.010
+Pfad suchen,
+
+163
+00:05:09.170 --> 00:05:09.989
+Kosten berechnen,
+
+164
+00:05:10.130 --> 00:05:10.769
+umverteilen.
+
+165
+00:05:11.140 --> 00:05:12.609
+Den wiederholen wir jetzt so lange,
+
+166
+00:05:12.769 --> 00:05:16.089
+bis keine einzige ungenutzte Route mehr eine Ersparnis bringt.
+
+167
+00:05:16.489 --> 00:05:16.859
+Erst dann,
+
+168
+00:05:16.970 --> 00:05:19.529
+wenn alle leeren Routen zu Mehrkosten führen würden,
+
+169
+00:05:19.809 --> 00:05:21.660
+sind wir wirklich am Optimum angekommen.
+
+170
+00:05:22.209 --> 00:05:23.049
+Vergleichen wir also mal,
+
+171
+00:05:23.130 --> 00:05:23.959
+was es gebracht hat.
+
+172
+00:05:24.529 --> 00:05:28.529
+Unser erster Plan aus dem Bauch heraus lag bei 4550 Dollar.
+
+173
+00:05:29.130 --> 00:05:32.739
+Der neue optimierte Plan liegt bei 4525.
+
+174
+00:05:33.250 --> 00:05:33.450
+Okay,
+
+175
+00:05:33.529 --> 00:05:35.450
+das sind jetzt nur 25 Dollar Unterschied.
+
+176
+00:05:35.769 --> 00:05:37.000
+Aber das Wichtigste ist.
+
+177
+00:05:37.170 --> 00:05:38.739
+Wir wissen jetzt zu 100 %
+
+178
+00:05:39.010 --> 00:05:41.410
+dass es absolut keine günstigere Lösung gibt.
+
+179
+00:05:41.850 --> 00:05:43.579
+Fassen wir es also noch mal kurz zusammen.
+
+180
+00:05:44.010 --> 00:05:46.329
+Der Trick ist dieser zweiteilige Ansatz.
+
+181
+00:05:46.799 --> 00:05:48.470
+Erst mal mit der einfachen Matrix
+
+182
+00:05:48.470 --> 00:05:51.510
+Minimum Methode schnell eine gute Startlösung finden
+
+183
+00:05:51.809 --> 00:05:54.970
+und dann mit der Stepping Stone Methode systematisch nachbessern,
+
+184
+00:05:55.250 --> 00:05:56.760
+bis es einfach nicht mehr besser geht.
+
+185
+00:05:57.279 --> 00:05:59.989
+Und das ist eigentlich die grosse Erkenntnis,
+
+186
+00:06:00.109 --> 00:06:02.829
+die weit über das Verschicken von Weizen hinausgeht.
+
+187
+00:06:03.510 --> 00:06:04.290
+Diese Methode,
+
+188
+00:06:04.549 --> 00:06:06.790
+also eine gute Basis zu finden und
+
+189
+00:06:06.790 --> 00:06:09.500
+sie dann intelligent und schrittweise zu optimieren.
+
+190
+00:06:09.910 --> 00:06:12.230
+Die kann man auf so vieles im Leben anwenden,
+
+191
+00:06:12.670 --> 00:06:13.820
+auf die Finanzplanung,
+
+192
+00:06:14.029 --> 00:06:15.190
+das Projektmanagement,
+
+193
+00:06:15.420 --> 00:06:17.179
+sogar auf die eigene Zeitplanung.
+
+194
+00:06:17.910 --> 00:06:20.100
+Und damit gebe ich die Frage an sie weiter.
+
+195
+00:06:20.670 --> 00:06:24.350
+Wo in ihrer Welt könnten die richtigen Trittsteine Ihnen dabei helfen,
+
+196
+00:06:24.630 --> 00:06:26.510
+einen noch besseren Weg zu finden?
